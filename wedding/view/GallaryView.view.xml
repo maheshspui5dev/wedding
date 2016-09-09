@@ -13,7 +13,7 @@
 		navButtonPress = "handleBackButton"
 		>
 		<content>
-<l:VerticalLayout id="gallaryViewVlayoutId">
+<l:VerticalLayout id="gallaryViewVlayoutId" width="100%">
 		</l:VerticalLayout>
 	</content>
 <!-- 			<footer>
