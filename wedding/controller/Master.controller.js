@@ -34,7 +34,19 @@ sap.ui.controller("wedding.controller.Master", {
 		
 			if(this.oDetailApp){
 				
+				this.splitApp.hideMaster();
+				this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
+				
 				this.splitApp.toDetail(this.oDetailApp.getId(),"fade");
+				
+				if(sap.ui.Device.system.phone){
+					this.splitApp.hideMaster();
+					this.splitApp.setMode(sap.m.SplitAppMode.PopoverMode);
+					var masterList = this.getView().byId("masterListId");
+//					masterList.setMode("None");
+//					masterList.removeSelections();
+				}
+				
 				
 				switch (selectedItem.getBindingContext().getObject().ID) {
 				case "1":

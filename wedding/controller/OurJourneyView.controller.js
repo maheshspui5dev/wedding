@@ -1,9 +1,5 @@
 sap.ui.controller("wedding.controller.OurJourneyView", {
 
-/**
-* Called when a controller is instantiated and its View controls (if available) are already created.
-* Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-*/
 	onInit: function() {
 //		jQuery.sap.require("wedding.plugins.cntl");
 		
@@ -12,6 +8,15 @@ sap.ui.controller("wedding.controller.OurJourneyView", {
 //			});
 		var ourJourneyViewVlayout = this.getView().byId("ourJourneyViewVlayoutId");
 //		
+		
+		if(sap.ui.Device.system.phone){
+			var page = this.getView().byId("ourJourneyViewId");
+			page.setShowNavButton(true);
+////			splitApp.hideMaster();
+////			splitApp.setMode(sap.m.SplitAppMode.HideMode);
+//			
+//			
+		}
 		
 		ourJourneyViewVlayout.bindAggregation("content" , "/d/Data" ,jQuery.proxy(this.createContent,this))
 //		viewPage.addEventDelegate({
@@ -71,6 +76,11 @@ sap.ui.controller("wedding.controller.OurJourneyView", {
 		
 		return coreHtml;
 //		this.getView().byId("ourJourneyViewId").addContent(coreHtml);
+	},
+	handleBackButton: function(evt){
+		this.splitApp.showMaster();
+		this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
+		this.splitApp.toMaster("oMasterApp");
 	}
 
 });

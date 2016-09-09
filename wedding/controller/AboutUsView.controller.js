@@ -17,7 +17,6 @@ sap.ui.controller("wedding.controller.AboutUsView", {
 ////			splitApp.hideMaster();
 ////			splitApp.setMode(sap.m.SplitAppMode.HideMode);
 //			
-			return ;
 //			
 		}
 //		groomId
@@ -39,9 +38,6 @@ sap.ui.controller("wedding.controller.AboutUsView", {
 		        // Load JSON in model
 				this.detailViewModel.loadData("wedding/MockData/AboutUsData.json");
 				this.detailViewModel.refresh(true);
-	},
-	handleBackButton: function(){
-		this.splitApp.to("masterId");
 	},
 	createContent: function(data3,context){
 		
@@ -400,6 +396,11 @@ sap.ui.controller("wedding.controller.AboutUsView", {
 	},
 	handleCoreHtmlRedering: function(evt){
 		
+	},
+	handleBackButton: function(evt){
+		this.splitApp.showMaster();
+		this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
+		this.splitApp.toMaster("oMasterApp");
 	}
 
 });

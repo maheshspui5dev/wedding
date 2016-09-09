@@ -30,7 +30,7 @@
 				</Image>
 			</HBox>
 			<VBox>
-		<List id="masterListId" selectionChange="handleMasterListItemClick"  mode="SingleSelectMaster" items="{/results}">
+		<List id="masterListId"  selectionChange="handleMasterListItemClick"  mode="SingleSelectMaster" items="{/results}">
 		<items>
 			<StandardListItem
 				title="{Title}"

@@ -17,7 +17,7 @@ sap.ui.controller("wedding.controller.wedding", {
 	
 	loadMaterAViews : function(){
 		
-		var oMasterApp = new sap.m.App();
+		var oMasterApp = new sap.m.App("oMasterApp");
 		var master  = sap.ui.view({id:"masterId", viewName:"wedding.view.Master", type:sap.ui.core.mvc.ViewType.XML});
 		oMasterApp.addPage(master);
 		oMasterApp.setBackgroundImage("wedding/backgroundImages/45.jpg");

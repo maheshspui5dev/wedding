@@ -8,6 +8,15 @@ sap.ui.controller("wedding.controller.GallaryView", {
 	onInit: function() {
 		var gallaryViewVlayout = this.getView().byId("gallaryViewVlayoutId");
 //		
+		if(sap.ui.Device.system.phone){
+			var page = this.getView().byId("gallaryViewPageId");
+			page.setShowNavButton(true);
+////			splitApp.hideMaster();
+////			splitApp.setMode(sap.m.SplitAppMode.HideMode);
+//			
+//			
+		}
+		
 		jQuery.sap.require("wedding.plugins.images-grid");
 		gallaryViewVlayout.bindAggregation("content" , "/d/Data" ,jQuery.proxy(this.createContent,this))
 //		viewPage.addEventDelegate({
@@ -51,6 +60,11 @@ handleRendering: function(evt){
 		  
 		});
 
+},
+handleBackButton: function(evt){
+	this.splitApp.showMaster();
+	this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
+	this.splitApp.toMaster("oMasterApp");
 }
 
 });
