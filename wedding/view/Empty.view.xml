@@ -1,0 +1,19 @@
+<mvc:View
+	height="100%"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+		<Page id="EmptyPageId"
+		class="sapUiContentPadding"
+		showNavButton="false">
+		<content>
+	
+	</content>
+			<!-- <footer>
+			<Toolbar>
+			</Toolbar>
+		</footer> -->
+	</Page>
+</mvc:View>

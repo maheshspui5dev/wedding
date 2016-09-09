@@ -1,0 +1,31 @@
+<mvc:View
+	controllerName="wedding.controller.AboutUsView"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	height="100%">
+		<Page id="aboutUsViewPageId"
+		title="{/d/Name}"
+		class="sapUiContentPadding"
+		showNavButton="false" 
+		navButtonPress = "handleBackButton" enableScrolling ="false"
+		>
+		<content>
+	<IconTabBar 
+		height= "80%"
+		id="idIconTabBar"
+		class="sapUiResponsiveContentPadding"
+		backgroundDesign = "Transparent" select="handleTabBarItemSelected" selectedKey="Juliet" >
+	<!-- <items>
+			<IconTabFilter 
+				icon="{Icon}"
+				text="{Text}"
+				key="Ok1" content = "{path:'/Data', template:'',factory:'.createContent'}"> 
+				</IconTabFilter>
+		</items> -->
+	</IconTabBar>
+	</content>
+	</Page>
+</mvc:View>

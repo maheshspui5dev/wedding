@@ -1,0 +1,52 @@
+<mvc:View
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="wedding.controller.Master"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<html:style>
+      .mainImageCss img {
+         cursor: pointer; cursor: hand; 
+      }
+   </html:style>
+	<Page title="{/MasterPageTitle}"
+		class="sapUiContentPadding"
+		showNavButton="false">
+		<content>
+		<HBox class = "mainImageCss">
+				<Image id ="mainImageId"
+					src="{/CoupleImage}"
+					densityAware="false"
+					class="sapUiNoMargin"
+					width="100%" 
+					height="270px"
+					press="attachClickEvent">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Image>
+			</HBox>
+			<VBox>
+		<List id="masterListId" selectionChange="handleMasterListItemClick"  mode="SingleSelectMaster" items="{/results}">
+		<items>
+			<StandardListItem
+				title="{Title}"
+				description="{Name}"
+				icon="{Icon}"
+				iconDensityAware="false"
+				iconInset="false" />
+		</items>
+	</List>
+	</VBox>
+		</content>
+		<!-- <footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button press="onPress" id="moreId" text="More" visible="false" />
+			</Toolbar>
+		</footer> -->
+	</Page>
+</mvc:View>

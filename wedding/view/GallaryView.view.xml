@@ -1,0 +1,24 @@
+<mvc:View
+	height="100%"
+	controllerName="wedding.controller.GallaryView"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+		<Page id="gallaryViewPageId"
+		title="{/d/Name}"
+		class="sapUiContentPadding"
+		showNavButton="false" 
+		navButtonPress = "handleBackButton"
+		>
+		<content>
+<l:VerticalLayout id="gallaryViewVlayoutId">
+		</l:VerticalLayout>
+	</content>
+<!-- 			<footer>
+			<Toolbar>
+			</Toolbar>
+		</footer> -->
+	</Page>
+</mvc:View>
