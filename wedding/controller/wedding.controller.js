@@ -1,10 +1,5 @@
 sap.ui.controller("wedding.controller.wedding", {
 
-/**
-* Called when a controller is instantiated and its View controls (if available) are already created.
-* Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-* @memberOf resume.resume
-*/
 	onInit: function() {
 		this.loadMaterAViews();	
 		
@@ -20,7 +15,7 @@ sap.ui.controller("wedding.controller.wedding", {
 		var oMasterApp = new sap.m.App("oMasterApp");
 		var master  = sap.ui.view({id:"masterId", viewName:"wedding.view.Master", type:sap.ui.core.mvc.ViewType.XML});
 		oMasterApp.addPage(master);
-		oMasterApp.setBackgroundImage("wedding/backgroundImages/45.jpg");
+		oMasterApp.setBackgroundImage("wedding/backgroundImages/v50.png");
 		oMasterApp.setBackgroundColor("Transparent");
 		oMasterApp.setBackgroundOpacity(0.2);
 		

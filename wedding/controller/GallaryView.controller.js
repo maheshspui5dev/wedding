@@ -1,11 +1,13 @@
-sap.ui.controller("wedding.controller.GallaryView", {
+sap.ui.define([
+		"wedding/base/CoreBase"
+	],
+	function(CoreBase) {
+		"use strict";
 
-/**
-* Called when a controller is instantiated and its View controls (if available) are already created.
-* Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-* @memberOf resume.Detail
-*/
+		return CoreBase.extend("wedding.controller.GallaryView", {
+
 	onInit: function() {
+		this.getView().addStyleClass(this._getContentDensityClass());
 		var gallaryViewVlayout = this.getView().byId("gallaryViewVlayoutId");
 //		
 		if(sap.ui.Device.system.phone){
@@ -66,5 +68,5 @@ handleBackButton: function(evt){
 	this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
 	this.splitApp.toMaster("oMasterApp");
 }
-
+		});
 });

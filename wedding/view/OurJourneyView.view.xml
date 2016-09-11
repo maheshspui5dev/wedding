@@ -13,7 +13,7 @@
 		navButtonPress = "handleBackButton"
 		>
 		<content>
-		<l:VerticalLayout id="ourJourneyViewVlayoutId">
+		<l:VerticalLayout id="ourJourneyViewVlayoutId" width="100%">
 		</l:VerticalLayout>
 	</content>
 		<!-- 	<footer>

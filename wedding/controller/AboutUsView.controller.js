@@ -1,12 +1,12 @@
-sap.ui.controller("wedding.controller.AboutUsView", {
+sap.ui.define([
+		"wedding/base/CoreBase"
+	],
+	function(CoreBase) {
+		"use strict";
 
-/**
-* Called when a controller is instantiated and its View controls (if available) are already created.
-* Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-* @memberOf resume.Detail
-*/
+		return CoreBase.extend("wedding.controller.AboutUsView", {
 	onInit: function() {
-		
+		this.getView().addStyleClass(this._getContentDensityClass());
 		jQuery.sap.require("wedding.plugins.hoverCarousel");
 		
 		this.detailViewModel = new sap.ui.model.json.JSONModel();
@@ -402,5 +402,5 @@ sap.ui.controller("wedding.controller.AboutUsView", {
 		this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
 		this.splitApp.toMaster("oMasterApp");
 	}
-
+		});
 });

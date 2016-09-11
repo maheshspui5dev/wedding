@@ -1,6 +1,14 @@
-sap.ui.controller("wedding.controller.OurJourneyView", {
+sap.ui.define([
+		"wedding/base/CoreBase"
+	],
+	function(CoreBase) {
+		"use strict";
+
+		return CoreBase.extend("wedding.controller.OurJourneyView", {
 
 	onInit: function() {
+		this.getView().addStyleClass(this._getContentDensityClass());
+//	}
 //		jQuery.sap.require("wedding.plugins.cntl");
 		
 //		this.getView().byId("ourJourneyViewId").attachBrowserEvent("window.onscroll", function(oEvent) {
@@ -84,3 +92,4 @@ sap.ui.controller("wedding.controller.OurJourneyView", {
 	}
 
 });
+	});		

@@ -1,20 +1,26 @@
-sap.ui.controller("wedding.controller.Master", {
+sap.ui.define([
+		"wedding/base/CoreBase"
+	],
+	function(CoreBase) {
+		"use strict";
 
-/**
-* Called when a controller is instantiated and its View controls (if available) are already created.
-* Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-* @memberOf resume.Master
-*/
+		return CoreBase.extend("wedding.controller.Master", {
+
 	splitApp:null,
 	onInit: function() {
+		this.getView().addStyleClass(this._getContentDensityClass());
 //		debugger;
 		var oModel = new sap.ui.model.json.JSONModel();
         // Load JSON in model
         oModel.loadData("wedding/MockData/MasterListData.json");
         this.getView().setModel(oModel);
 
+        var masterList = this.getView().byId("masterListId");
+        
+        masterList.addStyleClass(this._getContentDensityClass());
+        
 		if(!sap.ui.Device.system.phone){
-			var masterList = this.getView().byId("masterListId");
+			
 			this.updateFinishedKey = jQuery.proxy(this.handleMasterListUpdateFInished,this)
 			masterList.attachUpdateFinished(this.updateFinishedKey);
 		}
@@ -34,15 +40,16 @@ sap.ui.controller("wedding.controller.Master", {
 		
 			if(this.oDetailApp){
 				
-				this.splitApp.hideMaster();
-				this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
+//				this.splitApp.hideMaster();
+//				this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
 				
 				this.splitApp.toDetail(this.oDetailApp.getId(),"fade");
 				
 				if(sap.ui.Device.system.phone){
 					this.splitApp.hideMaster();
-					this.splitApp.setMode(sap.m.SplitAppMode.PopoverMode);
+					this.splitApp.setMode(sap.m.SplitAppMode.HideMode);
 					var masterList = this.getView().byId("masterListId");
+					masterList.removeSelections();
 //					masterList.setMode("None");
 //					masterList.removeSelections();
 				}
@@ -66,7 +73,7 @@ sap.ui.controller("wedding.controller.Master", {
 			}else{
 				this.oDetailApp = this.loadDetailView();
 				this.splitApp.addDetailPage(this.oDetailApp);
-				this.splitApp.toDetail(this.oDetailApp.getId(),"fade");	
+				this.splitApp.toDetail(this.oDetailApp.getId(),"slide");	
 			}
 	},
 	loadDetailView: function(){
@@ -91,7 +98,7 @@ sap.ui.controller("wedding.controller.Master", {
 		this.oDetailApp.set
 		
 		
-		this.oDetailApp.setBackgroundImage("wedding/backgroundImages/8898.jpg");
+		this.oDetailApp.setBackgroundImage("wedding/backgroundImages/51.jpg");
 		this.oDetailApp.setBackgroundColor("Transparent");
 		this.oDetailApp.setBackgroundOpacity(0.4);
 		return this.oDetailApp;
@@ -128,7 +135,6 @@ sap.ui.controller("wedding.controller.Master", {
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 * (NOT before the first rendering! onInit() is used for that one!).
-* @memberOf resume.Master
 */
 //	onBeforeRendering: function() {
 //
@@ -137,7 +143,6 @@ sap.ui.controller("wedding.controller.Master", {
 /**
 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
 * This hook is the same one that SAPUI5 controls get after being rendered.
-* @memberOf resume.Master
 */
 //	onAfterRendering: function() {
 //
@@ -145,10 +150,10 @@ sap.ui.controller("wedding.controller.Master", {
 
 /**
 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-* @memberOf resume.Master
 */
 //	onExit: function() {
 //
 //	}
 
+});
 });
