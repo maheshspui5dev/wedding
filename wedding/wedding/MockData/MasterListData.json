@@ -1,0 +1,24 @@
+{  
+   "CoupleImage":"wedding/MasterListImages/CoupleImage.jpg",
+   "MasterPageTitle":"wedding",
+   "results":[  
+      {  
+         "ID":"1",
+         "Title":"About Us",
+         "Name":"Romeo juliet",
+         "Icon":"wedding/MasterListImages/AboutUs2.png"
+      },
+      {  
+         "ID":"2",
+         "Title":"Our Journey",
+         "Name":"it happened on...........",
+         "Icon":"wedding/MasterListImages/OurJourney.ico"
+      },
+      {  
+         "ID":"3",
+         "Title":"Gallery",
+         "Name":"Wedding",
+         "Icon":"wedding/MasterListImages/GalaryIcon.jpg"
+      }
+   ]
+}
